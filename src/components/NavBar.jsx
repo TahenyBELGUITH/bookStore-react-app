@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default function NavBar() {
   return (
@@ -6,8 +7,8 @@ export default function NavBar() {
      <h1>TaHtouHa Store</h1>
      <nav>
        <ul>
-         <li>Books</li>
-         <li>Categories</li>
+         <NavLink to="/">Books</NavLink>
+         <NavLink to="/category">Categories</NavLink>
        </ul>
      </nav>
     </div>
