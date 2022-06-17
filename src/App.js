@@ -1,23 +1,27 @@
-import { Provider } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Books from './components/Books';
 import Categories from './components/Categories';
 import Error from './components/Error';
-import store from './redux/configureStore';
+import { displayBook } from './redux/books/books';
 
 function App() {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(displayBook());
+  }, [dispatch]);
+
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Books />} />
-          <Route path="/category" element={<Categories />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-      </BrowserRouter>
-    </Provider>
+    <BrowserRouter>
+      <NavBar />
+      <Routes>
+        <Route exact path="/" element={<Books />} />
+        <Route path="/category" element={<Categories />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

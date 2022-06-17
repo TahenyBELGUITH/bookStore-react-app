@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,900&display=swap');
+
+.panel-bg {
+  padding: 2rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 3px 3px 0;
+}
+
+.Bookstore-CMS {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 2rem;
+  color: #0290ff;
+  margin-right: 3rem;
+  font-weight: 900;
+}
+
+a {
+  margin-left: 1rem;
+  text-decoration: none;
+}
+
+.BOOKS {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  font-weight: 300;
+}
+
+.CATEGORIES {
+  opacity: 0.5;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 1.9px;
+  color: #121212;
+  font-weight: 300;
+}
+
+.oval {
+  color: #0290ff;
+  width: 30px;
+  height: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+}

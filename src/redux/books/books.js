@@ -1,38 +1,61 @@
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'A',
-    author: 'me',
-  },
-  {
-    id: uuidv4(),
-    title: 'B',
-    author: 'you',
-  },
-];
+const urlAPI = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/3LSTJ9VY1B6y9Gs7jQ0l/books';
 
-// actions' creator
-export const addBook = (book) => ({
-  type: 'Books/addBook',
-  payload: book,
+// async Action
+export const displayBook = createAsyncThunk('books/loadBook', async () => {
+  const response = await fetch(urlAPI);
+  const books = await response.json();
+  const booksArray = [
+    Object.keys(books).map((key) => ({
+      id: key,
+      ...books[key][0],
+    })),
+  ];
+  return booksArray;
 });
 
-export const removeBook = (book) => ({
-  type: 'Books/removeBook',
-  payload: book,
-});
+export const addBook = createAsyncThunk(
+  'books/addBook',
+  async ({ title, author, category }, thunkAPI) => {
+    await fetch(urlAPI, {
+      method: 'POST',
+      body: JSON.stringify({
+        item_id: uuidv4(),
+        title,
+        author,
+        category,
+      }),
+      headers: {
+        'content-type': 'application/json',
+      },
+    }).then(() => thunkAPI.dispatch(displayBook())); // update the store
+    const { books } = thunkAPI.getState().books; // update the view
+    return books;
+  },
+);
 
-const bookReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case 'Books/addBook':
-      return [...state, action.payload];
-    case 'Books/removeBook':
-      return [...state.filter((book) => book.id !== action.payload.id)];
-    default:
-      return state;
-  }
+export const removeBook = createAsyncThunk(
+  'books/deleteBook',
+  async (id, thunkAPI) => {
+    await fetch(`${urlAPI}/${id}`, {
+      method: 'DELETE',
+    }).then(() => thunkAPI.dispatch(displayBook())); // update the store
+    const { books } = thunkAPI.getState().books; // update the view
+    return books;
+  },
+);
+
+const options = {
+  name: 'books',
+  initialState: [],
+  reducers: {},
+  extraReducers: {
+    [displayBook.fulfilled]: (state, action) => action.payload[0],
+    [addBook.fulfilled]: (state, action) => action.payload,
+    [removeBook.fulfilled]: (state, action) => action.payload,
+  },
 };
-
-export default bookReducer;
+const bookSlice = createSlice(options);
+export default bookSlice.reducer;
