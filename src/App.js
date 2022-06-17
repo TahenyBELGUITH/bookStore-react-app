@@ -4,7 +4,6 @@ import React, { useEffect } from 'react';
 import NavBar from './components/NavBar';
 import Books from './components/Books';
 import Categories from './components/Categories';
-import Error from './components/Error';
 import { displayBook } from './redux/books/books';
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
       <Routes>
         <Route exact path="/" element={<Books />} />
         <Route path="/category" element={<Categories />} />
-        <Route path="*" element={<Error />} />
       </Routes>
     </BrowserRouter>
   );
