@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../redux/books/books';
+import { displayBook, removeBook } from '../redux/books/books';
 
 function Book() {
   const books = useSelector((state) => state.Books); // from the store (array)
@@ -9,6 +9,10 @@ function Book() {
   const handleCLick = (removedBook) => {
     dispatch(removeBook(removedBook));
   };
+
+  useEffect(() => {
+    dispatch(displayBook(), []);
+  });
 
   return (
     <div>
@@ -29,11 +33,8 @@ function Book() {
           </ul>
         </div>
         <div className="book-degree">
-          <progress id="file" value="62" max="100">
-            {' '}
-            62%
-            {' '}
-          </progress>
+          <div className="spinner" />
+          <span>63%</span>
           <span>completed!</span>
         </div>
         <div className="current-book">
