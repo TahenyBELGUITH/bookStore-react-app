@@ -1,14 +1,19 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 export default function NavBar() {
   return (
-    <div>
-      <h1>BOOKSTORE CMS</h1>
+    <div className="panel-bg">
+      <h1 className="Bookstore-CMS">TAHTOUHA</h1>
       <nav>
         <ul>
-          <NavLink to="/">Books</NavLink>
-          <NavLink to="/category">Categories</NavLink>
+          <NavLink to="/" className="BOOKS">
+            Books
+          </NavLink>
+          <NavLink to="/category" className="CATEGORIES">
+            Categories
+          </NavLink>
         </ul>
       </nav>
     </div>

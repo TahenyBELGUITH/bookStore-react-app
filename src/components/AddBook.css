@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@900&display=swap');
+
+.container {
+  margin: 2rem auto;
+  width: 90%;
+}
+
+.Line {
+  width: 75rem;
+  height: 0.125rem;
+  border: solid 1px #e8e8e8;
+  margin-bottom: 2rem;
+}
+
+.TitleAdd {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1.25rem;
+  font-weight: bold;
+  letter-spacing: -0.18px;
+  color: #8888;
+  margin-bottom: 1rem;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.input-Panel {
+  padding: 1rem;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  background-color: #fff;
+  width: 45%;
+}
+
+.ADD-BOOK {
+  padding: 0.8rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+  color: #fff;
+  width: 10%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}

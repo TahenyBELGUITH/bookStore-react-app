@@ -1,0 +1,16 @@
+
+.Rectangle-check {
+  border-radius: 3px;
+  background-color: #0290ff;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin: 3% 0 0 40%;
+}
+
+.under {
+  font-size: 3rem;
+  margin: 3% 0 0 30%;
+}

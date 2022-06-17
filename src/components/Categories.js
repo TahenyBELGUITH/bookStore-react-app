@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { checkStatus } from '../redux/categories/categories';
+import './Categories.css';
 
 export default function Categories() {
   const categories = useSelector((state) => state.Categories);
@@ -12,8 +13,10 @@ export default function Categories() {
 
   return (
     <div>
-      <button type="button" onClick={clickHandler}>Check status</button>
-      <h1>{categories}</h1>
+      <button type="button" onClick={clickHandler} className="Rectangle-check">
+        Check status
+      </button>
+      <h1 className="under">{categories}</h1>
     </div>
   );
 }
