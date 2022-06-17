@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,900&display=swap');
 
-.panel-bg {
+.panel{
   padding: 2rem;
   background-color: #fff;
   display: flex;

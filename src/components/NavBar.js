@@ -1,10 +1,10 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import './NavBar.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
 export default function NavBar() {
   return (
-    <div className="panel-bg">
+    <div className="panel">
       <h1 className="Bookstore-CMS">TAHTOUHA</h1>
       <nav>
         <ul>
