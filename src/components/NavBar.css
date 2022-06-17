@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,300;1,900&display=swap');
 
-.panel{
+.panel-bg {
   padding: 2rem;
   background-color: #fff;
   display: flex;
@@ -36,4 +36,17 @@ a {
   letter-spacing: 1.9px;
   color: #121212;
   font-weight: 300;
+}
+
+.oval {
+  color: #0290ff;
+  width: 30px;
+  height: 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
 }

@@ -1,10 +1,10 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import "./NavBar.css";
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import './NavBar.css';
 
 export default function NavBar() {
   return (
-    <div className="panel">
+    <div className="panel-bg">
       <h1 className="Bookstore-CMS">TAHTOUHA</h1>
       <nav>
         <ul>
@@ -15,6 +15,7 @@ export default function NavBar() {
             Categories
           </NavLink>
         </ul>
+        <i className="fa-solid fa-user oval" />
       </nav>
     </div>
   );

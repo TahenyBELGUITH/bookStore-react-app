@@ -5,8 +5,8 @@ import { addBook } from '../redux/books/books';
 import './AddBook.css';
 
 function Form() {
-  const [book, setBook] = useState({ title: '', author: '' });
-  const { title, author } = book;
+  const [book, setBook] = useState({ title: '', author: '', category: '' });
+  const { title, author, category } = book;
 
   const dispatch = useDispatch();
 
@@ -16,11 +16,13 @@ function Form() {
       id: uuidv4(),
       title,
       author,
+      category,
     };
     dispatch(addBook(newBook));
     setBook({
       title: '',
       author: '',
+      category: '',
     });
   };
 
@@ -43,6 +45,7 @@ function Form() {
           name="title"
           value={title}
           onChange={handleChange}
+          required
         />
         <input
           className="input-Panel"
@@ -51,6 +54,16 @@ function Form() {
           name="author"
           value={author}
           onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          placeholder="Book Category"
+          className="input-Panel"
+          onChange={handleChange}
+          value={category}
+          name="category"
+          required
         />
         <input type="submit" value="Add Book" className="ADD-BOOK" />
       </form>
