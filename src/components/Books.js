@@ -1,15 +1,14 @@
-import React from 'react'
-import Form from "./AddBook"
+import React from 'react';
+import Form from './AddBook';
 import Book from './Book';
-
 
 function Books() {
   return (
     <>
-    <Book/>
-    <Form /> 
+      <Book />
+      <Form />
     </>
-  )
+  );
 }
 
 export default Books;

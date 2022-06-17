@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { removeBook } from '../redux/books/books';
 
 function Book() {
-  const books = useSelector((state) => state.Books); // from the store (array)
+  const books = useSelector((state) => state.books); // from the store (array)
   const dispatch = useDispatch();
 
   const handleCLick = (removedBook) => {
